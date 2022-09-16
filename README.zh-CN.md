@@ -73,17 +73,17 @@ const registerNodes: IRegisterNode[] = [
   },
   {
     type: 'node',
-    name: '普通节点',
+    name: 'Normal node',
     displayComponent: OtherNodeDisplay,
   },
   {
     type: 'condition',
-    name: '条件节点',
+    name: 'Condition node',
     displayComponent: ConditionNodeDisplay,
   },
   {
     type: 'branch',
-    name: '分支节点',
+    name: 'Branch node',
     conditionNodeType: 'condition',
   },
 ];
@@ -168,7 +168,7 @@ export default Demo;
 | registerRemoteNodes       | 注册远程节点                                                                                                                                                                                                         | [RegisterRemoteNode](#registerremotenode)[]                          |      | -          | 1.3.0 |
 | showPracticalBranchNode   | -                                                                                                                                                                                                                    | `boolean`                                                            |      | false      | 1.1.0 |
 | showPracticalBranchRemove | -                                                                                                                                                                                                                    | `boolean`                                                            |      | false      | 1.1.0 |
-| sortable                  | 条件节点在分支内可拖拽排序                                                                                                                                                                                           | `boolean`                                                            |      | false      | 1.4.0 |
+| sortable                  | Condition node 在分支内可拖拽排序                                                                                                                                                                                    | `boolean`                                                            |      | false      | 1.4.0 |
 | sortableAnchor            | 自定义拖拽排序的锚点序                                                                                                                                                                                               | `ReactNode`                                                          |      | -          | 1.4.0 |
 | spaceX                    | 节点之间水平方向的间距                                                                                                                                                                                               | `number`                                                             |      | 16         |       |
 | spaceY                    | 节点之间垂直方向的间距                                                                                                                                                                                               | `number`                                                             |      | 16         |       |
@@ -233,11 +233,11 @@ export default Demo;
 | addableComponent          | 节点下方点击加号展开的内容                                                                          | `React.FC`\<[AddableComponent](#addablecomponent)\>   |      | -                                 |
 | addableNodeTypes          | 指定节点下方的可添加节点列表                                                                        | `string[]`                                            |      | -                                 |
 | addIcon                   | 在可添加节点列表中的图标（已经内置了一些图标）                                                      | `ReactNode`                                           |      | -                                 |
-| addConditionIcon          | 分支节点添加条件时的图标（已有默认图标）                                                            | `ReactNode`                                           |      | -                                 | 1.3.3 |
+| addConditionIcon          | Branch node 添加条件时的图标（已有默认图标）                                                        | `ReactNode`                                           |      | -                                 | 1.3.3 |
 | className                 | 节点外层的类名                                                                                      | `string`                                              |      | -                                 | 1.3.4 |
-| conditionMinNum           | 对应的条件节点最小数量                                                                              | `number`                                              |      | 1                                 |
-| conditionMaxNum           | 对应的条件节点最大数量                                                                              | `number`                                              |      | -                                 |
-| conditionNodeType         | 对应的条件节点类型                                                                                  | `string`                                              |      | -                                 |
+| conditionMinNum           | 对应的 Condition node 最小数量                                                                      | `number`                                              |      | 1                                 |
+| conditionMaxNum           | 对应的 Condition node 最大数量                                                                      | `number`                                              |      | -                                 |
+| conditionNodeType         | 对应的 Condition node 类型                                                                          | `string`                                              |      | -                                 |
 | configComponent           | 节点的配置表单组件                                                                                  | `React.FC`\<[ConfigComponent](#configcomponent)\>     |      | -                                 |
 | configTitle               | 节点对应的抽屉标题                                                                                  | `string \| ((node: INode, nodes: INode[]) => string)` |      | -                                 |
 | customRemove              | 自定义删除按钮                                                                                      | `boolean`                                             |      | false                             |
@@ -271,7 +271,7 @@ export default Demo;
 
 | 参数   | 说明                                                                                                                                                                               | 类型                                                   |
 | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------- |
-| cancel | 取消时调用，用来关闭抽屉（V1 版本开始推荐使用 useDrawer 中的 closeDrawer 方法）                                                                                                    | `() => void`                                           |
+| cancel | Cancel 时调用，用来关闭抽屉（V1 版本开始推荐使用 useDrawer 中的 closeDrawer 方法）                                                                                                 | `() => void`                                           |
 | node   | 节点信息（V1 版本开始推荐使用 BuilderContext 获取 selectedNode ）                                                                                                                  | [Node](#node)                                          |
 | nodes  | （V1 版本开始推荐使用 BuilderContext 获取）                                                                                                                                        | [Node](#node)[]                                        |
 | save   | 保存节点数据时调用（自动关闭抽屉，无需再执行 cancel），流程引擎会根据第二个参数的布尔值设置节点的 `validateStatusError` 属性（V1 版本开始推荐使用 useDrawer 中的 saveDrawer 方法） | `(values: any, validateStatusError?: boolean) => void` |
@@ -286,16 +286,16 @@ export default Demo;
 
 ### Node
 
-| 参数                | 说明                                                   | 类型            |
-| :------------------ | :----------------------------------------------------- | :-------------- |
-| children            | 分支节点对应的条件节点数组 或 条件节点对应的子流程     | [Node](#node)[] |
-| configuring         | 节点是否正在配置，节点的展示组件可根据此属性高亮节点   | `boolean`       |
-| data                | 节点的数据                                             | `any`           |
-| id                  | 节点的唯一 id                                          | `string`        |
-| name                | 节点名称，同节点注册时的 name                          | `string`        |
-| path                | 节点在流程引擎中的路径                                 | `string[]`      |
-| type                | 节点类型，同节点注册时的 `type`                        | `string`        |
-| validateStatusError | 节点的表单校验失败，节点的展示组件可根据此属性高亮节点 | `boolean`       |
+| 参数                | 说明                                                                  | 类型            |
+| :------------------ | :-------------------------------------------------------------------- | :-------------- |
+| children            | Branch node 对应的 Condition node 数组 或 Condition node 对应的子流程 | [Node](#node)[] |
+| configuring         | 节点是否正在配置，节点的展示组件可根据此属性高亮节点                  | `boolean`       |
+| data                | 节点的数据                                                            | `any`           |
+| id                  | 节点的唯一 id                                                         | `string`        |
+| name                | 节点名称，同节点注册时的 name                                         | `string`        |
+| path                | 节点在流程引擎中的路径                                                | `string[]`      |
+| type                | 节点类型，同节点注册时的 `type`                                       | `string`        |
+| validateStatusError | 节点的表单校验失败，节点的展示组件可根据此属性高亮节点                | `boolean`       |
 
 ### Context
 

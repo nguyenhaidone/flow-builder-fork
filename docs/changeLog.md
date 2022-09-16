@@ -8,7 +8,7 @@ order: 9
 
 `2022-05-19`
 
-- 增加 `showPracticalBranchNode` 和 `showPracticalBranchRemove` 属性，支持显示实际的分支节点
+- 增加 `showPracticalBranchNode` 和 `showPracticalBranchRemove` 属性，支持显示实际的 Branch node
 
 ## 1.2.0
 
@@ -26,7 +26,7 @@ order: 9
 
 `2022-08-04`
 
-- 增加 `sortable` 属性，支持条件节点之间进行拖拽排序
+- 增加 `sortable` 属性，支持 Condition node 之间进行拖拽排序
 
 ## 1.4.1
 
@@ -38,7 +38,7 @@ order: 9
 
 `2022-08-11`
 
-- 设置 drawerVisibleWhenAddNode 为 true：增加分支节点时，若分支节点注册的 showPracticalBranchNode 为 true 且配置了 configComponent，选中分支节点；否则选中分支节点的第一个条件节点
+- 设置 drawerVisibleWhenAddNode 为 true：增加 Branch node 时，若 Branch node 注册的 showPracticalBranchNode 为 true 且配置了 configComponent，选中 Branch node；否则选中 Branch node 的第一个 Condition node
 
 ## 1.4.3
 

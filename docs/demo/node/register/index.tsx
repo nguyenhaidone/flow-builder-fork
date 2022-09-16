@@ -14,19 +14,19 @@ const registerNodes: IRegisterNode[] = [
   },
   {
     type: 'node1',
-    name: '普通节点 1',
+    name: 'Normal node 1',
   },
   {
     type: 'node2',
-    name: '普通节点 2',
+    name: 'Normal node 2',
   },
   {
     type: 'condition',
-    name: '条件节点',
+    name: 'Condition node',
   },
   {
     type: 'branch',
-    name: '分支节点',
+    name: 'Branch node',
     conditionNodeType: 'condition',
   },
 ];

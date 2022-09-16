@@ -27,9 +27,9 @@ const ConfigForm: React.FC = () => {
         </Form.Item>
       </Form>
       <div>
-        <Button onClick={cancel}>取消</Button>
+        <Button onClick={cancel}>Cancel</Button>
         <Button type="primary" onClick={handleSubmit}>
-          确定
+          Sure
         </Button>
       </div>
     </div>

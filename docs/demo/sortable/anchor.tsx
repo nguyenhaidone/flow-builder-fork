@@ -43,17 +43,17 @@ const registerNodes: IRegisterNode[] = [
   },
   {
     type: 'node',
-    name: '普通节点',
+    name: 'Normal node',
     displayComponent: NodeDisplay,
   },
   {
     type: 'condition',
-    name: '条件节点',
+    name: 'Condition node',
     displayComponent: ConditionNodeDisplay,
   },
   {
     type: 'branch',
-    name: '分支节点',
+    name: 'Branch node',
     conditionNodeType: 'condition',
   },
 ];
@@ -68,17 +68,17 @@ const defaultNodes = [
   {
     id: 'node-b2ffe834-c7c2-4f29-a370-305adc03c010',
     type: 'branch',
-    name: '分支节点',
+    name: 'Branch node',
     children: [
       {
         id: 'node-cf9c8f7e-26dd-446c-b3fa-b2406fc7821a',
         type: 'condition',
-        name: '条件节点',
+        name: 'Condition node',
         children: [
           {
             id: 'node-f227cd08-a503-48b7-babf-b4047fc9dfa5',
             type: 'node',
-            name: '普通节点',
+            name: 'Normal node',
             path: ['1', 'children', '0', 'children', '0'],
           },
         ],
@@ -87,7 +87,7 @@ const defaultNodes = [
       {
         id: 'node-9d393627-24c0-469f-818a-319d9a678707',
         type: 'condition',
-        name: '条件节点',
+        name: 'Condition node',
         children: [],
         path: ['1', 'children', '1'],
       },
@@ -97,7 +97,7 @@ const defaultNodes = [
   {
     id: 'node-972401ca-c4db-4268-8780-5607876d8372',
     type: 'node',
-    name: '普通节点',
+    name: 'Normal node',
     path: ['2'],
   },
   {

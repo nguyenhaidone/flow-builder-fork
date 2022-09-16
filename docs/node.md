@@ -10,21 +10,21 @@ order: 2
 
 - 开始节点
 - 结束节点
-- 分支节点
-- 条件节点
-- 普通节点
+- Branch node
+- Condition node
+- Normal node
 
 ## 节点数量
 
 ### RegisterNode
 
-| 参数              | 说明                                           | 类型    | 必须 | 默认值 |
-| :---------------- | :--------------------------------------------- | :------ | :--- | :----- |
-| conditionNodeType | 对应的条件节点类型（若有效则此节点为分支节点） | string  |      | -      |
-| name              | 节点名称                                       | string  | ✓    | -      |
-| type              | 节点类型                                       | string  | ✓    | -      |
-| isStart           | 是否为开始节点                                 | boolean |      | false  |
-| isEnd             | 是否为结束节点                                 | boolean |      | false  |
+| 参数              | 说明                                                       | 类型    | 必须 | 默认值 |
+| :---------------- | :--------------------------------------------------------- | :------ | :--- | :----- |
+| conditionNodeType | 对应的 Condition node 类型（若有效则此节点为 Branch node） | string  |      | -      |
+| name              | 节点名称                                                   | string  | ✓    | -      |
+| type              | 节点类型                                                   | string  | ✓    | -      |
+| isStart           | 是否为开始节点                                             | boolean |      | false  |
+| isEnd             | 是否为结束节点                                             | boolean |      | false  |
 
 <br>
 
@@ -67,7 +67,7 @@ order: 2
 
 | 参数   | 说明                                                                                                                                                                               | 类型                                                   |
 | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------- |
-| cancel | 取消时调用，用来关闭抽屉（V1 版本开始推荐使用 useDrawer 中的 closeDrawer 方法）                                                                                                    | `() => void`                                           |
+| cancel | Cancel 时调用，用来关闭抽屉（V1 版本开始推荐使用 useDrawer 中的 closeDrawer 方法）                                                                                                 | `() => void`                                           |
 | node   | 节点信息（V1 版本开始推荐使用 BuilderContext 获取 selectedNode ）                                                                                                                  | [Node](#node)                                          |
 | nodes  | （V1 版本开始推荐使用 BuilderContext 获取）                                                                                                                                        | [Node](#node)[]                                        |
 | save   | 保存节点数据时调用（自动关闭抽屉，无需再执行 cancel），流程引擎会根据第二个参数的布尔值设置节点的 `validateStatusError` 属性（V1 版本开始推荐使用 useDrawer 中的 saveDrawer 方法） | `(values: any, validateStatusError?: boolean) => void` |
@@ -78,13 +78,13 @@ order: 2
 
 ## 节点的可添加节点列表
 
-默认情况下，所有节点（除结束节点外，结束节点之后不可再添加节点）的可添加节点列表（分支节点、普通节点）都是一样的。通过 `addableNodeTypes` 属性注册节点的可添加节点列表，若此属性为有效数组，则将数组中的所有节点类型作为该节点的可添加节点列表，实现不同节点之间的差异化。
+默认情况下，所有节点（除结束节点外，结束节点之后不可再添加节点）的可添加节点列表（Branch node、Normal node）都是一样的。通过 `addableNodeTypes` 属性注册节点的可添加节点列表，若此属性为有效数组，则将数组中的所有节点类型作为该节点的可添加节点列表，实现不同节点之间的差异化。
 
 以下例子就实现了：
 
-- 开始节点设置了 addableNodeTypes 为普通节点 --> 只能添加普通节点
-- 普通节点和条件节点没有设置 addableNodeTypes --> 所有可添加节点（普通节点和分支节点）
-- 分支节点设置了 addableNodeTypes 为空数组 --> 不能再添加节点
+- 开始节点设置了 addableNodeTypes 为 Normal node --> 只能添加 Normal node
+- Normal node 和 Condition node 没有设置 addableNodeTypes --> 所有可添加节点（Normal node 和 Branch node）
+- Branch node 设置了 addableNodeTypes 为空数组 --> 不能再添加节点
 
 <code src="./demo/node/addableNodeTypes/index.tsx" />
 

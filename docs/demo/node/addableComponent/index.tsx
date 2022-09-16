@@ -35,7 +35,7 @@ const CustomAddableComponent: React.FC<IAddableComponent> = ({ add }) => {
         className="flow-builder-custom-addable-node-item"
         onClick={() => add('node')}
       >
-        普通节点
+        Normal node
       </div>
     </div>
   );
@@ -57,17 +57,17 @@ const registerNodes: IRegisterNode[] = [
   },
   {
     type: 'node',
-    name: '普通节点',
+    name: 'Normal node',
     displayComponent: NodeDisplay,
   },
   {
     type: 'condition',
-    name: '条件节点',
+    name: 'Condition node',
     displayComponent: ConditionNodeDisplay,
   },
   {
     type: 'branch',
-    name: '分支节点',
+    name: 'Branch node',
     conditionNodeType: 'condition',
   },
 ];
