@@ -55,6 +55,7 @@ const AddNodeButton: React.FC = () => {
   );
 
   const handleAddNode = (newNodeType: string) => {
+    // console.log(newNodeType);
     addNode(newNodeType);
     setVisible(false);
   };

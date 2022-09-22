@@ -20,19 +20,19 @@ order: 9
 
 `2022-06-09`
 
-- 增加 `registerRemoteNodes` 属性，支持远程节点注册，通过 System.js 加载对应的 js / css 资源
+- 增加 `registerRemoteNodes` 属性，支持远程 Node registration，通过 System.js 加载对应的 js / css 资源
 
 ## 1.4.0
 
 `2022-08-04`
 
-- 增加 `sortable` 属性，支持 Condition node 之间进行拖拽排序
+- 增加 `sortable` 属性，支持 Condition node 之间进行 dragSort
 
 ## 1.4.1
 
 `2022-08-04`
 
-- 优化拖拽排序过程中的虚拟边框
+- 优化 dragSort 过程中的虚拟边框
 
 ## 1.4.2
 
@@ -44,4 +44,4 @@ order: 9
 
 `2022-08-23`
 
-- 增加 `useSort` 方法，灵活对节点进行排序
+- 增加 `useSort` 方法，灵活对节点进行 Sort

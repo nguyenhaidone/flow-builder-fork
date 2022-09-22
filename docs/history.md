@@ -2,7 +2,7 @@
 order: 5
 ---
 
-# 撤销、重做
+# Undo、redo
 
 ## 启用
 
@@ -12,7 +12,7 @@ order: 5
 
 | 参数        | 说明       | 类型                                                 | 必须 | 默认值 |
 | :---------- | :--------- | :--------------------------------------------------- | :--- | :----- |
-| historyTool | 撤销、重做 | `boolean` \| [HistoryToolConfig](#historytoolconfig) |      | false  |
+| historyTool | Undo、redo | `boolean` \| [HistoryToolConfig](#historytoolconfig) |      | false  |
 
 #### HistoryToolConfig
 
@@ -33,19 +33,19 @@ order: 5
 
 ## 自定义历史工具栏
 
-调用 react-flow-builder 实例中的 `history` 方法也可以进行撤销、重做，同时监听 `onHistoryChange` 事件。
+调用 react-flow-builder 实例中的 `history` 方法也可以进行 Undo、redo，同时监听 `onHistoryChange` 事件。
 
 ### FlowBuilder
 
-| 参数            | 说明                                                           | 类型                                                     | 必须 | 默认值 |
-| :-------------- | :------------------------------------------------------------- | :------------------------------------------------------- | :--- | :----- |
-| onHistoryChange | 历史状态变化之后的回调，两个参数分别代表是否需要禁用撤销和重做 | `(undoDisabled: boolean, redoDisabled: boolean) => void` |      | -      |
+| 参数            | 说明                                                              | 类型                                                     | 必须 | 默认值 |
+| :-------------- | :---------------------------------------------------------------- | :------------------------------------------------------- | :--- | :----- |
+| onHistoryChange | 历史状态变化之后的回调，两个参数分别代表是否需要禁用 Undo 和 redo | `(undoDisabled: boolean, redoDisabled: boolean) => void` |      | -      |
 
 ### FlowBuilderInstance
 
 | 名称    | 说明       | 类型                               |
 | :------ | :--------- | :--------------------------------- |
-| history | 撤销、重做 | `(type: 'undo' \| 'redo') => void` |
+| history | Undo、redo | `(type: 'undo' \| 'redo') => void` |
 
 <br>
 

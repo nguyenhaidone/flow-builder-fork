@@ -1,6 +1,30 @@
+# React Flow Builder Custom
+
+Source: https://github.com/bytedance/flow-builder
+
+This repository used to test and demonstrate the use of flow-builder libs.
+
+## Prerequisites to run the project in your development environment
+
+- **nodejs >= v14.18.0**
+- **npm >= 6.14.7**
+- **yarn >= v1.19.1**
+
+Clone project and run (step by step):
+
+```
+$ git clone https://github.com/nguyenhaidone/React-flow-builder-fork.git
+$ yarn install
+$ yarn start
+```
+
+Demo is presented in the introduction. Press F12 or view inspect to see the data structure and the flat tree.
+
+More info about libs below:
+
 # Introduction
 
-English | [简体中文](https://github.com/bytedance/flow-builder/blob/main/README.zh-CN.md)
+English
 
 A highly customizable streaming flow builder. The registration ability can flexibly customize your nodes, different types of node display and form, etc.
 

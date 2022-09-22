@@ -93,8 +93,14 @@ const BranchNode: React.FC<IProps> = (props) => {
   const Component = registerNode?.displayComponent || DefaultNode;
 
   const handleAddCondition = async () => {
+    // console.log('add conditions:');
+    // console.log(node);
+    // console.log(registerNode.conditionNodeType);
+    // console.log('----------');
     try {
-      await beforeAddConditionNode?.(node);
+      // await beforeAddConditionNode?.(node);
+      // const bacn = await beforeAddConditionNode?.(node);
+      // console.log(bacn);
       registerNode?.conditionNodeType &&
         addNode(registerNode.conditionNodeType);
     } catch (error) {}

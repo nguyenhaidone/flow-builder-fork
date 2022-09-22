@@ -2,13 +2,13 @@
 order: 3
 ---
 
-# 远程节点注册
+# 远程 Node registration
 
 通过 System.js 从远程加载 js / css 资源
 
 ## js 资源
 
-需要按照 umd 规范默认导出节点注册所需要的各个属性。注意：react、antd 等组件可作为 external，不必直接打包到 umd 资源中，否则会导致远程节点资源体积过大，影响加载速度和多个实例出现的其他异常现象
+需要按照 umd 规范默认导出 Node registration 所需要的各个属性。注意：react、antd 等组件可作为 external，不必直接打包到 umd 资源中，否则会导致远程节点资源体积过大，影响加载速度和多个实例出现的其他异常现象
 
 ## css 资源
 

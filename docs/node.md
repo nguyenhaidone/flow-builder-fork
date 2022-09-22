@@ -2,9 +2,9 @@
 order: 2
 ---
 
-# 节点注册
+# Node registration
 
-不同的使用场景对节点的数量、类型、样式等都有不用的诉求，react-flow-builder 提供了 `registerNodes` 属性，通过节点注册的机制满足个性化场景。
+不同的使用场景对节点的数量、类型、样式等都有不用的诉求，react-flow-builder 提供了 `registerNodes` 属性，通过 Node registration 的机制满足个性化场景。
 
 分为 5 种节点类型：
 

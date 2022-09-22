@@ -1,4 +1,4 @@
-# 简介
+# Introduction
 
 [English](https://github.com/bytedance/flow-builder/blob/main/README.md) | 简体中文
 
@@ -7,7 +7,7 @@
 | ![demo1](https://camo.githubusercontent.com/eb256eb3d1ea49164b5d70be43be26212e8355666ccbf6b5f8279abf02ae15e4/68747470733a2f2f747661312e73696e61696d672e636e2f6c617267652f62663632396530666c7931677663736f3033717a6e6a323161693167637464652e6a7067) | ![demo2](https://camo.githubusercontent.com/dd06c1e7c2762899ffb84da7c32de5992dfc57ab2b15e4c768953622cd0fcdc0/68747470733a2f2f747661312e73696e61696d672e636e2f6c617267652f30303376694548356c7931677663736f36797764316a36317238313767776c3630322e6a7067) |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-## 试一试
+## Demo
 
 http://react-flow-builder.site
 
@@ -15,7 +15,7 @@ http://react-flow-builder.site
 
 https://github.com/bytedance/flow-builder
 
-## 安装
+## Installations
 
 ```
 yarn add react-flow-builder
@@ -154,12 +154,12 @@ export default Demo;
 | :------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------- | :--- | :--------- | :---- |
 | backgroundColor           | 背景颜色                                                                                                                                                                                                             | `string`                                                             |      | #F7F7F7    |       |
 | className                 | 外层容器的类名                                                                                                                                                                                                       | `string`                                                             |      | -          |       |
-| draggable                 | 是否启用拖拽能力                                                                                                                                                                                                     | `boolean`                                                            |      | false      | 1.0.0 |
-| DragComponent             | 自定义拖拽组件                                                                                                                                                                                                       | `React.FC`\<[DragComponent](#dragcomponent)\>                        |      | -          | 1.0.0 |
+| draggable                 | 是否启用 drag 能力                                                                                                                                                                                                   | `boolean`                                                            |      | false      | 1.0.0 |
+| DragComponent             | 自定义 drag 组件                                                                                                                                                                                                     | `React.FC`\<[DragComponent](#dragcomponent)\>                        |      | -          | 1.0.0 |
 | DropComponent             | 自定义放置组件                                                                                                                                                                                                       | `React.FC`\<[DropComponent](#dropcomponent)\>                        |      | -          | 1.0.0 |
 | drawerProps               | 配置节点时 Drawer 组件额外的 [props](https://ant.design/components/drawer/#API)。流程引擎内置了 `visible` 和 `onClose，以及` {`title`: "Configuration", `width`: 480, `destroyOnClose`: true, `maskClosable`: false} | `DrawerProps`                                                        |      | -          |       |
 | drawerVisibleWhenAddNode  | 增加节点时打开抽屉                                                                                                                                                                                                   | `boolean`                                                            |      | false      |       |
-| historyTool               | 撤销，重做                                                                                                                                                                                                           | `boolean` \| [HistoryToolConfig](#historytoolconfig)                 |      | false      |       |
+| historyTool               | Undo，redo                                                                                                                                                                                                           | `boolean` \| [HistoryToolConfig](#historytoolconfig)                 |      | false      |       |
 | layout                    | 垂直/水平布局                                                                                                                                                                                                        | `vertical` \| `horizontal`                                           |      | `vertical` |       |
 | lineColor                 | 连线的颜色                                                                                                                                                                                                           | `string`                                                             |      | #999999    |       |
 | nodes                     | 流程引擎的节点                                                                                                                                                                                                       | [Node](#node)[]                                                      | ✓    | -          |       |
@@ -168,14 +168,14 @@ export default Demo;
 | registerRemoteNodes       | 注册远程节点                                                                                                                                                                                                         | [RegisterRemoteNode](#registerremotenode)[]                          |      | -          | 1.3.0 |
 | showPracticalBranchNode   | -                                                                                                                                                                                                                    | `boolean`                                                            |      | false      | 1.1.0 |
 | showPracticalBranchRemove | -                                                                                                                                                                                                                    | `boolean`                                                            |      | false      | 1.1.0 |
-| sortable                  | Condition node 在分支内可拖拽排序                                                                                                                                                                                    | `boolean`                                                            |      | false      | 1.4.0 |
-| sortableAnchor            | 自定义拖拽排序的锚点序                                                                                                                                                                                               | `ReactNode`                                                          |      | -          | 1.4.0 |
+| sortable                  | Condition node 在分支内可 dragSort                                                                                                                                                                                   | `boolean`                                                            |      | false      | 1.4.0 |
+| sortableAnchor            | 自定义 dragSort 的锚点序                                                                                                                                                                                             | `ReactNode`                                                          |      | -          | 1.4.0 |
 | spaceX                    | 节点之间水平方向的间距                                                                                                                                                                                               | `number`                                                             |      | 16         |       |
 | spaceY                    | 节点之间垂直方向的间距                                                                                                                                                                                               | `number`                                                             |      | 16         |       |
-| zoomTool                  | 缩放                                                                                                                                                                                                                 | `boolean` \| [ZoomToolConfig](#zoomtoolconfig)                       |      | false      |       |
+| zoomTool                  | Zoom                                                                                                                                                                                                                 | `boolean` \| [ZoomToolConfig](#zoomtoolconfig)                       |      | false      |       |
 | onChange                  | 节点数据改变时的回调函数                                                                                                                                                                                             | (nodes: [Node](#node)[], changeEvent?: string) => void               | ✓    | -          |       |
-| onHistoryChange           | 历史状态变化之后的回调，两个参数分别代表是否需要禁用撤销和重做                                                                                                                                                       | `(undoDisabled: boolean, redoDisabled: boolean) => void`             |      | -          |       |
-| onZoomChange              | 缩放变化之后的回调，三个参数分别代表是否需要禁用缩小、当前的缩放值、是否需要禁用放大                                                                                                                                 | `(outDisabled: boolean, value: number, inDisabled: boolean) => void` |      | -          |       |
+| onHistoryChange           | 历史状态变化之后的回调，两个参数分别代表是否需要禁用 Undo 和 redo                                                                                                                                                    | `(undoDisabled: boolean, redoDisabled: boolean) => void`             |      | -          |       |
+| onZoomChange              | Zoom 变化之后的回调，三个参数分别代表是否需要禁用缩小、当前的 Zoom 值、是否需要禁用放大                                                                                                                              | `(outDisabled: boolean, value: number, inDisabled: boolean) => void` |      | -          |       |
 
 #### HistoryToolConfig
 
@@ -186,20 +186,20 @@ export default Demo;
 
 #### ZoomToolConfig
 
-| 参数         | 说明                     | 类型      | 默认值 |
-| :----------- | :----------------------- | :-------- | :----- |
-| hidden       | 是否隐藏默认的缩放工具栏 | `boolean` | false  |
-| initialValue | 初始值                   | `number`  | 100    |
-| min          | 最小值                   | `number`  | 10     |
-| max          | 最大值                   | `number`  | 200    |
-| step         | 每次缩放比例的变化大小   | `number`  | 10     |
+| 参数         | 说明                       | 类型      | 默认值 |
+| :----------- | :------------------------- | :-------- | :----- |
+| hidden       | 是否隐藏默认的 Zoom 工具栏 | `boolean` | false  |
+| initialValue | 初始值                     | `number`  | 100    |
+| min          | 最小值                     | `number`  | 10     |
+| max          | 最大值                     | `number`  | 200    |
+| step         | 每次 Zoom 比例的变化大小   | `number`  | 10     |
 
 #### DragComponent
 
-| 参数        | 说明                                                                                                    | 类型                         | 版本  |
-| :---------- | :------------------------------------------------------------------------------------------------------ | :--------------------------- | :---- |
-| onDragStart | 自定义拖拽组件的 dragStart 事件需要调用此方法，设置正在拖拽的节点类型（ BuilderContext 中的 dragType ） | `(nodeType: string) => void` | 1.0.0 |
-| onDragEnd   | 自定义拖拽组件的 dragEnd 事件需要调用此方法，清空正在拖拽的节点类型（ BuilderContext 中的 dragType ）   | `() => void`                 | 1.0.0 |
+| 参数        | 说明                                                                                                        | 类型                         | 版本  |
+| :---------- | :---------------------------------------------------------------------------------------------------------- | :--------------------------- | :---- |
+| onDragStart | 自定义 drag 组件的 dragStart 事件需要调用此方法，设置正在 drag 的节点类型（ BuilderContext 中的 dragType ） | `(nodeType: string) => void` | 1.0.0 |
+| onDragEnd   | 自定义 drag 组件的 dragEnd 事件需要调用此方法，清空正在 drag 的节点类型（ BuilderContext 中的 dragType ）   | `() => void`                 | 1.0.0 |
 
 #### DropComponent
 
@@ -212,9 +212,9 @@ export default Demo;
 | 名称        | 说明               | 类型                                                                            | 版本  |
 | :---------- | :----------------- | :------------------------------------------------------------------------------ | :---- |
 | add         | 增加节点           | `(node: INode, newNodeType: string) => void` \| `(newNodeType: string) => void` |
-| history     | 撤销、重做         | `(type: 'undo' \| 'redo') => void`                                              |
+| history     | Undo、redo         | `(type: 'undo' \| 'redo') => void`                                              |
 | remove      | 删除一个或多个节点 | `(nodes: INode \| INode[] = useContext(NodeContext)) => void`                   |
-| zoom        | 缩放               | `(type: 'out' \| 'in' \| number) => void`                                       |
+| zoom        | Zoom               | `(type: 'out' \| 'in' \| number) => void`                                       |
 | closeDrawer | 关闭抽屉           | `() => void`                                                                    |
 | context     | BuilderContext     | [BuilderContext](#buildercontext)                                               | 1.3.5 |
 
@@ -292,9 +292,9 @@ export default Demo;
 | configuring         | 节点是否正在配置，节点的展示组件可根据此属性高亮节点                  | `boolean`       |
 | data                | 节点的数据                                                            | `any`           |
 | id                  | 节点的唯一 id                                                         | `string`        |
-| name                | 节点名称，同节点注册时的 name                                         | `string`        |
+| name                | 节点名称，同 Node registration 时的 name                              | `string`        |
 | path                | 节点在流程引擎中的路径                                                | `string[]`      |
-| type                | 节点类型，同节点注册时的 `type`                                       | `string`        |
+| type                | 节点类型，同 Node registration 时的 `type`                            | `string`        |
 | validateStatusError | 节点的表单校验失败，节点的展示组件可根据此属性高亮节点                | `boolean`       |
 
 ### Context
@@ -309,7 +309,7 @@ export default Demo;
 
 | 属性                        | 说明                          | 类型                                 |
 | :-------------------------- | :---------------------------- | :----------------------------------- |
-| zoomValue                   | 当前缩放比例                  | `number`                             |
+| zoomValue                   | 当前 Zoom 比例                | `number`                             |
 | setZoomValue                | 设置 zoomValue                | `(zoomValue: number) => void`        |
 | historyRecords              | 历史数据                      | `INode[][]`                          |
 | setHistoryRecords           | 设置 historyRecords           | `(records: INode[][]) => void`       |
@@ -319,7 +319,7 @@ export default Demo;
 | setSelectedNode             | 设置 selectedNode             | `(node: INode \| undefined) => void` |
 | drawerTitle                 | 抽屉标题                      | `string`                             |
 | setDrawerTitle              | 设置 drawerTitle              | `(title: string) => void`            |
-| dragType                    | 正在拖拽的节点类型            | `string`                             |
+| dragType                    | 正在 drag 的节点类型          | `string`                             |
 | setDragType                 | 设置 dragType                 | `(type: string) => void`             |
 
 #### NodeContext
@@ -349,11 +349,11 @@ export default Demo;
 
 #### useZoom
 
-| 属性    | 说明                                                                               | 类型                                      |
-| :------ | :--------------------------------------------------------------------------------- | :---------------------------------------- |
-| minZoom | 最小缩放比例                                                                       | `number`                                  |
-| maxZoom | 最大缩放比例                                                                       | `number`                                  |
-| zoom    | 改变缩放比例（同 [FlowBuilderInstance](#flowbuilderinstance) 中提供的 zoom 方法 ） | `(type: 'out' \| 'in' \| number) => void` |
+| 属性    | 说明                                                                                 | 类型                                      |
+| :------ | :----------------------------------------------------------------------------------- | :---------------------------------------- |
+| minZoom | 最小 Zoom 比例                                                                       | `number`                                  |
+| maxZoom | 最大 Zoom 比例                                                                       | `number`                                  |
+| zoom    | 改变 Zoom 比例（同 [FlowBuilderInstance](#flowbuilderinstance) 中提供的 zoom 方法 ） | `(type: 'out' \| 'in' \| number) => void` |
 
 #### useHistory
 
@@ -361,13 +361,13 @@ export default Demo;
 | :---------- | :-------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
 | maxLength   | 最多保存的数量                                                                    | `number`                                                        |
 | pushHistory | 增加历史记录                                                                      | `(record?: INode[] = useContext(BuilderContext).nodes) => void` |
-| history     | 撤销/重做（同 [FlowBuilderInstance](#flowbuilderinstance) 中提供的 history 方法） | `(type: 'undo' \| 'redo') => void`                              |
+| history     | Undo/redo（同 [FlowBuilderInstance](#flowbuilderinstance) 中提供的 history 方法） | `(type: 'undo' \| 'redo') => void`                              |
 
 #### useSort
 
-| 属性     | 说明         | 类型                                              | 版本  |
-| :------- | :----------- | :------------------------------------------------ | :---- |
-| backward | 向后排序     | `(node: INode = useContext(NodeContext)) => void` | 1.4.3 |
-| forward  | 向前排序     | `(node: INode = useContext(NodeContext)) => void` | 1.4.3 |
-| end      | 排序到最末尾 | `(node: INode = useContext(NodeContext)) => void` | 1.4.3 |
-| start    | 排序到最前面 | `(node: INode = useContext(NodeContext)) => void` | 1.4.3 |
+| 属性     | 说明          | 类型                                              | 版本  |
+| :------- | :------------ | :------------------------------------------------ | :---- |
+| backward | 向后 Sort     | `(node: INode = useContext(NodeContext)) => void` | 1.4.3 |
+| forward  | 向前 Sort     | `(node: INode = useContext(NodeContext)) => void` | 1.4.3 |
+| end      | Sort 到最末尾 | `(node: INode = useContext(NodeContext)) => void` | 1.4.3 |
+| start    | Sort 到最前面 | `(node: INode = useContext(NodeContext)) => void` | 1.4.3 |
