@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Button } from 'antd';
 import { BuilderContext } from '../contexts';
 import { useZoom } from '../hooks';
 import type { IZoomToolConfig } from '../index';
@@ -15,13 +14,13 @@ const ZoomTool = () => {
 
   return showZoom ? (
     <div className="flow-builder-zoom-tool">
-      <Button disabled={zoomValue === minZoom} onClick={() => zoom('out')}>
+      <button disabled={zoomValue === minZoom} onClick={() => zoom('out')}>
         -
-      </Button>
+      </button>
       <span className="flow-builder-zoom-tool__number">{zoomValue + '%'}</span>
-      <Button disabled={zoomValue === maxZoom} onClick={() => zoom('in')}>
+      <button disabled={zoomValue === maxZoom} onClick={() => zoom('in')}>
         +
-      </Button>
+      </button>
     </div>
   ) : null;
 };

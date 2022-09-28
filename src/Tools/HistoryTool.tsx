@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button } from 'antd';
+// import { Button } from 'antd';
 import { BuilderContext } from '../contexts';
 import { useHistory } from '../hooks';
 import type { IHistoryToolConfig } from '../index';
@@ -16,18 +16,18 @@ const HistoryTool = () => {
 
   return showHistory ? (
     <div className="flow-builder-undo-redo-tool">
-      <Button
+      <button
         disabled={activeHistoryRecordIndex <= 0}
         onClick={() => history('undo')}
       >
         {'<'}
-      </Button>
-      <Button
+      </button>
+      <button
         disabled={activeHistoryRecordIndex === historyRecords.length - 1}
         onClick={() => history('redo')}
       >
         {'>'}
-      </Button>
+      </button>
     </div>
   ) : null;
 };
