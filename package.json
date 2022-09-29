@@ -71,8 +71,5 @@
     "doc": "docs"
   },
   "author": "nguyenhaidone",
-  "license": "ISC",
-  "publishConfig": {
-    "@nguyenhaidone:registry": "https://npm.pkg.github.com"
-  }
+  "license": "ISC"
 }
